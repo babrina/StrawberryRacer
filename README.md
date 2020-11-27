@@ -1,3 +1,3 @@
 # StrawberryRacer
 
-Racing game with spriteKit with pixelart.
+Racing game with spriteKit in pixelart.
