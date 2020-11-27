@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "RACER"; ObjectID = "1Cq-Ej-ste"; */
+"1Cq-Ej-ste.text" = "RACER";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2K7-8U-oxD"; */
+"2K7-8U-oxD.text" = "Label";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "3lw-lY-z8g"; */
+"3lw-lY-z8g.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "BACK"; ObjectID = "5fE-5f-ljU"; */
+"5fE-5f-ljU.normalTitle" = "BACK";
+
+/* Class = "UIButton"; normalTitle = "BACK"; ObjectID = "GN0-MV-Sme"; */
+"GN0-MV-Sme.normalTitle" = "BACK";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "PCa-4g-wwJ"; */
+"PCa-4g-wwJ.normalTitle" = "Settings";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PIx-6L-wIP"; */
+"PIx-6L-wIP.text" = "Label";
+
+/* Class = "UILabel"; text = "CAR COLOR: "; ObjectID = "PW9-Lj-M7H"; */
+"PW9-Lj-M7H.text" = "CAR COLOR: ";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "W4i-xO-fpq"; */
+"W4i-xO-fpq.normalTitle" = "Start";
+
+/* Class = "UIButton"; normalTitle = "MENU"; ObjectID = "bTM-4D-iRU"; */
+"bTM-4D-iRU.normalTitle" = "MENU";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nje-3w-T2c"; */
+"nje-3w-T2c.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter your name"; ObjectID = "qiC-1p-w7B"; */
+"qiC-1p-w7B.placeholder" = "Enter your name";
+
+/* Class = "UIButton"; normalTitle = "High Scores"; ObjectID = "tTp-mm-oby"; */
+"tTp-mm-oby.normalTitle" = "High Scores";
+
+/* Class = "UILabel"; text = "Strawberry"; ObjectID = "tqr-ho-V2t"; */
+"tqr-ho-V2t.text" = "Strawberry";
+
+/* Class = "UILabel"; text = "HIGH SCORES"; ObjectID = "uv2-Aj-ZNx"; */
+"uv2-Aj-ZNx.text" = "HIGH SCORES";
+
+/* Class = "UILabel"; text = "Obstacle TYpe:"; ObjectID = "zFc-Ad-fQh"; */
+"zFc-Ad-fQh.text" = "Obstacle TYpe:";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ztc-wn-fdN"; */
+"ztc-wn-fdN.text" = "0";
