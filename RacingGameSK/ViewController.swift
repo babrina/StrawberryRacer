@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .light
         self.highScoresButtonOutlet.setTitle(NSLocalizedString("High Scores", comment: ""), for: .normal)
         
         backgroundImageView.addParalaxEffect()

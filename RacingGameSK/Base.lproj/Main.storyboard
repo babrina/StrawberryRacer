@@ -502,10 +502,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </skView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztc-wn-fdN">
-                                <rect key="frame" x="299" y="44" width="100" height="100"/>
+                                <rect key="frame" x="249" y="44" width="150" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="IYN-gw-Dlg"/>
-                                    <constraint firstAttribute="width" constant="100" id="acd-ZG-WG2"/>
+                                    <constraint firstAttribute="width" constant="150" id="acd-ZG-WG2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PixelEmulator" family="Pixel Emulator" pointSize="70"/>
                                 <nil key="textColor"/>
