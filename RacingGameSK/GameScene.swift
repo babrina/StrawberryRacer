@@ -81,12 +81,10 @@ class GameScene: SKScene {
                     let makeLesserHW = SKAction.resize(toWidth: 60, height: 80, duration: 1)
                     if data.rotationRate.z >= 0.4 {
                         self.checkObstacleIntersect = false
-                        print(self.checkObstacleIntersect)
                         self.car.run(makeBiggerHW, completion: {
                             self.car.run(makeLesserHW)
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.checkObstacleIntersect = true
-                                print(self.checkObstacleIntersect)
                             }
                         })
                     }
