@@ -173,7 +173,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carbg" translatesAutoresizingMaskIntoConstraints="NO" id="v0R-Gm-Al3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carbg" translatesAutoresizingMaskIntoConstraints="NO" id="v0R-Gm-Al3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q78-Sc-ksc">
@@ -340,7 +340,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obstacle TYpe:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-Ad-fQh">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obstacle TYpe:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-Ad-fQh">
                                 <rect key="frame" x="20" y="527.5" width="195.5" height="24"/>
                                 <fontDescription key="fontDescription" name="PixelEmulator" family="Pixel Emulator" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -375,10 +375,10 @@
                                     <action selector="previousCarButton:" destination="hpj-G5-7LO" eventType="touchUpInside" id="Hxv-OB-pVz"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-Li-zjP">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-Li-zjP">
                                 <rect key="frame" x="157" y="616.5" width="100" height="100"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4i-Gr-MdE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4i-Gr-MdE">
                                 <rect key="frame" x="267" y="650" width="77" height="33"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="arrow.right.square" catalog="system"/>
@@ -386,7 +386,7 @@
                                     <action selector="nextObstacleButton:" destination="hpj-G5-7LO" eventType="touchUpInside" id="EMJ-PD-qbK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqp-5C-O1U">
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wqp-5C-O1U">
                                 <rect key="frame" x="70" y="650" width="77" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -538,7 +538,7 @@
         <image name="arrow.right.square" catalog="system" width="128" height="114"/>
         <image name="barrel" width="290" height="380"/>
         <image name="car" width="38.666667938232422" height="61.333332061767578"/>
-        <image name="carbg" width="960" height="1035"/>
+        <image name="carbg" width="320" height="345"/>
         <image name="maxresdefault" width="426.66665649414062" height="240"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,7 +7,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var obstacleOutlet: UIImageView!
     
     var obstacleArray = [UIImage(named: "bush")!, UIImage(named: "barrel")!]
-    var carArray = [UIImage(named: "car")!, UIImage(named: "yellowcar")!]
+    var carArray = [UIImage(named: "car")!, UIImage(named: "yellowcar")!, UIImage(named: "pinkcar")!, UIImage(named: "bluecar")!, UIImage(named: "lightbluecar")!, UIImage(named: "orangecar")!]
     var settings = Settings()
     
     

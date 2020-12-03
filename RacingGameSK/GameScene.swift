@@ -13,6 +13,7 @@ class GameScene: SKScene {
     var motionManager = CMMotionManager()
     var destX: CGFloat = 0.0
     var checkObstacleIntersect = true
+    var obstacleArray: [String] = ["yellowcar", "bluecar", "lightbluecar", "orangecar", "car", "pinkcar"]
     
     override func didMove(to view: SKView) {
         setupScene()
@@ -175,7 +176,7 @@ class GameScene: SKScene {
     }
     
     @objc func createCarObstacle() {
-        let obstacleCar = SKSpriteNode(imageNamed: "car")
+        let obstacleCar = SKSpriteNode(imageNamed: obstacleArray.randomElement() ?? "car")
         obstacleCar.name = "obstacleCar"
         obstacleCar.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         obstacleCar.size.width = 60
