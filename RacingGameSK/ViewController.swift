@@ -1,5 +1,7 @@
 import UIKit
 import SpriteKit
+import FirebaseCrashlytics
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var startView: UIView!
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
         startView.cornerRadius()
         highScoresView.cornerRadius()
         settingsView.cornerRadius()
-        
+      
         
     }
     override func viewDidAppear(_ animated: Bool) {

@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseCrashlytics
 
 class ScoresViewController: UIViewController {
 

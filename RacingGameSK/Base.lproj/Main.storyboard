@@ -303,7 +303,7 @@
                         <outlet property="settingsButtonOutlet" destination="PCa-4g-wwJ" id="unU-4k-0a3"/>
                         <outlet property="settingsView" destination="OQd-nJ-Slo" id="qVG-Wl-09X"/>
                         <outlet property="startButtonOutlet" destination="W4i-xO-fpq" id="6mq-SP-kFP"/>
-                        <outlet property="startView" destination="1MF-ZQ-Q7L" id="PEY-g2-rVd"/>
+                        <outlet property="startView" destination="1MF-ZQ-Q7L" id="zMp-yr-3SA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -393,6 +393,14 @@
                                 <state key="normal" image="arrow.left.square" catalog="system"/>
                                 <connections>
                                     <action selector="previousObstacleButton:" destination="hpj-G5-7LO" eventType="touchUpInside" id="yya-FJ-x1x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-7l-CVX">
+                                <rect key="frame" x="184" y="764" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crash:" destination="hpj-G5-7LO" eventType="touchUpInside" id="SuL-MN-vrr"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -2,6 +2,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import CoreMotion
+import FirebaseCrashlytics
 
 class GameScene: SKScene {
     

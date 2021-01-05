@@ -1,6 +1,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import FirebaseCrashlytics
 
 class GameViewController: UIViewController {
     
@@ -21,22 +22,7 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(processNotification), name: Notification.Name.gameStop, object: nil)
     }
     
-    //    override var shouldAutorotate: Bool {
-    //        return true
-    //    }
-    //
-    //    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    //        if UIDevice.current.userInterfaceIdiom == .phone {
-    //            return .allButUpsideDown
-    //        } else {
-    //            return .all
-    //        }
-    //    }
-    //
-    //    override var prefersStatusBarHidden: Bool {
-    //        return true
-    //    }
-    
+  
     
     @IBAction func processNotification() {
         stopGame()

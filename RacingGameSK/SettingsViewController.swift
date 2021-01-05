@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseCrashlytics
 
 class SettingsViewController: UIViewController {
     
@@ -94,6 +95,7 @@ class SettingsViewController: UIViewController {
     @IBAction func tapRecognized(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
+    
     
     
     
