@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "Без названия (3).jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "bluecar.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

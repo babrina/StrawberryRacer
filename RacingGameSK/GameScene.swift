@@ -1,81 +1,106 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-
-enum Direction {
-    case left
-    case right
-}
+import CoreMotion
+import FirebaseCrashlytics
 
 class GameScene: SKScene {
     
     var car = SKSpriteNode()
     var bush = SKSpriteNode()
     var gameSpeed: CGFloat = 0.3
-    var leftGrass = SKSpriteNode()
-    var movement: CGFloat = 30
     var obstacleSpeed = 10
     var died = false
-    
+    var motionManager = CMMotionManager()
+    var destX: CGFloat = 0.0
+    var checkObstacleIntersect = true
+    var obstacleArray: [String] = ["yellowcar", "bluecar", "lightbluecar", "orangecar", "car", "pinkcar"]
     
     override func didMove(to view: SKView) {
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        setupScene()
         
-        guard let mycar = self.childNode(withName: "car") as? SKSpriteNode else {return}
-        car = mycar
-        
+        setupMotionManager()
         createRoadStrip()
         pushTimer()
         
         
-        
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeDetected(_:)))
-        leftSwipe.direction = .left
-        self.view?.addGestureRecognizer(leftSwipe)
-        
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeDetected(_:)))
-        rightSwipe.direction = .right
-        self.view?.addGestureRecognizer(rightSwipe)
-        
     }
     
-    //MARK: - Swipe Detection
-    
-    @IBAction func leftSwipeDetected(_ sender: UISwipeGestureRecognizer) {
-        moveCar(direction: .left)
-    }
-    
-    @IBAction func rightSwipeDetected(_ sender: UISwipeGestureRecognizer) {
-        
-        moveCar(direction: .right)
-        
-    }
     
     func didEvaluateActions(for scene: SKScene) {
         if car.position.x == -135 {
             stopGame()
             sendData()
         }
-       
+        
     }
     override func update(_ currentTime: TimeInterval) {
-        
+        addMotionToCar()
         showRoadStrip()
         removeItems()
         checkObstacle()
-        print(car.position.x)
         
     }
     
     func makePause() {
         isPaused = true
     }
-
+    
+    func addMotionToCar() {
+        let action = SKAction.moveTo(x: destX, duration: 1)
+        car.run(action)
+    }
+    
+    func setupScene() {
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        guard let mycar = self.childNode(withName: "car") as? SKSpriteNode else {return}
+        car = mycar
+    }
+    func setupMotionManager() {
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 0.01
+            motionManager.startAccelerometerUpdates(to: .main) {
+                (data, error) in
+                guard let data = data, error == nil else {
+                    return
+                }
+                
+                let currentX = self.car.position.x
+                self.destX = currentX + CGFloat(data.acceleration.x * 500)
+                
+                
+                
+            }
+            
+            
+            if motionManager.isGyroAvailable {
+                motionManager.gyroUpdateInterval = 0.1
+                motionManager.startGyroUpdates(to: .main) { (data, error) in
+                    guard let data = data, error == nil else { return }
+                    
+                    let makeBiggerHW = SKAction.resize(toWidth: 120, height: 160, duration: 1)
+                    let makeLesserHW = SKAction.resize(toWidth: 60, height: 80, duration: 1)
+                    if data.rotationRate.z >= 0.4 {
+                        self.checkObstacleIntersect = false
+                        self.car.run(makeBiggerHW, completion: {
+                            self.car.run(makeLesserHW)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                self.checkObstacleIntersect = true
+                            }
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    
     func checkObstacle() {
         guard let obstacle = self.childNode(withName: "obstacleCar") as? SKSpriteNode else {return}
         var obstacleCar = obstacle
         
-        if car.intersects(obstacleCar) {
+        if car.intersects(obstacleCar) && checkObstacleIntersect {
             died = true
             makePause()
             stopGame()
@@ -152,7 +177,7 @@ class GameScene: SKScene {
     }
     
     @objc func createCarObstacle() {
-        let obstacleCar = SKSpriteNode(imageNamed: "car")
+        let obstacleCar = SKSpriteNode(imageNamed: obstacleArray.randomElement() ?? "car")
         obstacleCar.name = "obstacleCar"
         obstacleCar.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         obstacleCar.size.width = 60
@@ -184,20 +209,6 @@ class GameScene: SKScene {
     }
     
     
-    
-    func moveCar(direction: Direction) {
-        switch direction {
-        case .left:
-            UIView.animate(withDuration: 0.3) {
-                self.car.position.x -= self.movement
-            }
-        case .right:
-            UIView.animate(withDuration: 0.3) {
-                self.car.position.x += self.movement
-            }
-        }
-    }
-    
     func removeItems() {
         for child in children {
             if child.position.y < -self.size.height - 100 {
@@ -212,14 +223,14 @@ class GameScene: SKScene {
             child.removeAllActions()
             
             
-           
+            
         }
     }
     
     func sendData() {
         
         NotificationCenter.default.post(name: Notification.Name.gameStop, object: nil, userInfo: nil)
-
+        
     }
 }
 
