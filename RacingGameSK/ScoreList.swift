@@ -8,8 +8,7 @@ class ScoreList: Codable {
     
     init() {}
 
-    
-    
+
     init(name: String, score: Int, date: String) {
         self.name = name
         self.score = score

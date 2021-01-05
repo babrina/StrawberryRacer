@@ -18,12 +18,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         setupScene()
-        
         setupMotionManager()
         createRoadStrip()
         pushTimer()
-        
-        
     }
     
     
@@ -39,7 +36,6 @@ class GameScene: SKScene {
         showRoadStrip()
         removeItems()
         checkObstacle()
-        
     }
     
     func makePause() {
@@ -53,10 +49,10 @@ class GameScene: SKScene {
     
     func setupScene() {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        
         guard let mycar = self.childNode(withName: "car") as? SKSpriteNode else {return}
         car = mycar
     }
+    
     func setupMotionManager() {
         if motionManager.isAccelerometerAvailable {
             motionManager.accelerometerUpdateInterval = 0.01
@@ -65,20 +61,13 @@ class GameScene: SKScene {
                 guard let data = data, error == nil else {
                     return
                 }
-                
                 let currentX = self.car.position.x
                 self.destX = currentX + CGFloat(data.acceleration.x * 500)
-                
-                
-                
             }
-            
-            
-            if motionManager.isGyroAvailable {
+                if motionManager.isGyroAvailable {
                 motionManager.gyroUpdateInterval = 0.1
                 motionManager.startGyroUpdates(to: .main) { (data, error) in
                     guard let data = data, error == nil else { return }
-                    
                     let makeBiggerHW = SKAction.resize(toWidth: 120, height: 160, duration: 1)
                     let makeLesserHW = SKAction.resize(toWidth: 60, height: 80, duration: 1)
                     if data.rotationRate.z >= 0.4 {
@@ -99,24 +88,20 @@ class GameScene: SKScene {
     func checkObstacle() {
         guard let obstacle = self.childNode(withName: "obstacleCar") as? SKSpriteNode else {return}
         var obstacleCar = obstacle
-        
         if car.intersects(obstacleCar) && checkObstacleIntersect {
             died = true
             makePause()
             stopGame()
             sendData()
         }
-        
         guard let leftLine = childNode(withName: "leftLine") else {return}
         guard let rightLine = childNode(withName: "rightLine") else {return}
-        
         if car.position.x <= -135 {
             stopGame()
             sendData()
         }
-        
-        
     }
+    
     func createLaunchBushes() {
         let bush = SKSpriteNode(imageNamed: "bush")
         bush.name = "bush"
@@ -132,7 +117,6 @@ class GameScene: SKScene {
         let bushTimer = Timer.scheduledTimer(timeInterval: TimeInterval(gameSpeed), target: self, selector: #selector(GameScene.createBush), userInfo: nil, repeats: true)
         let secondBushTimer = Timer.scheduledTimer(timeInterval: TimeInterval(gameSpeed), target: self, selector: #selector(GameScene.createRightBush), userInfo: nil, repeats: true)
         let obstacleTimer = Timer.scheduledTimer(timeInterval: TimeInterval(4), target: self, selector: #selector(GameScene.createCarObstacle), userInfo: nil, repeats: true)
-        
         if died {
             obstacleTimer.invalidate()
             roadStripTimer.invalidate()
@@ -152,6 +136,7 @@ class GameScene: SKScene {
         bush.position.y = 1000
         addChild(bush)
     }
+    
     @objc func createRightBush() {
         let rightBush = SKSpriteNode(imageNamed: "bush")
         rightBush.name = "rightBush"
@@ -192,7 +177,6 @@ class GameScene: SKScene {
         enumerateChildNodes(withName: "roadStrip") { (roadStrip, stop) in
             guard let strip = roadStrip as? SKShapeNode else {return}
             strip.position.y -= 30
-            
         }
         enumerateChildNodes(withName: "bush") { (bush, stop) in
             guard let bush = bush as? SKSpriteNode else {return}
@@ -221,16 +205,11 @@ class GameScene: SKScene {
         for child in children {
             child.removeFromParent()
             child.removeAllActions()
-            
-            
-            
         }
     }
     
     func sendData() {
-        
         NotificationCenter.default.post(name: Notification.Name.gameStop, object: nil, userInfo: nil)
-        
     }
 }
 
