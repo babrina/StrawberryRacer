@@ -154,7 +154,6 @@
 				91D7E867255FC0A200D8971C /* Sources */,
 				91D7E868255FC0A200D8971C /* Frameworks */,
 				91D7E869255FC0A200D8971C /* Resources */,
-				E83820B783D6502B0C380928 /* [CP] Embed Pods Frameworks */,
 				914B488E257D788E00C39415 /* ShellScript */,
 			);
 			buildRules = (
@@ -257,23 +256,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		E83820B783D6502B0C380928 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RacingGameSK/Pods-RacingGameSK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RacingGameSK/Pods-RacingGameSK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RacingGameSK/Pods-RacingGameSK-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

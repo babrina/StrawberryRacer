@@ -11,11 +11,6 @@ class ScoresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDefaults()
-//        playerScores.append(ScoreList.init(name: "Igor", score: 26, date: "25.04.15"))
-//        playerScores.append(ScoreList.init(name: "Fedor", score: 28, date: "25.04.12"))
-//
-//        playerScores.append(ScoreList.init(name: "German", score: 25, date: "25.04.15"))
-
      
     }
     

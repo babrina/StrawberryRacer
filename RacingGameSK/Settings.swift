@@ -8,21 +8,15 @@ class Settings: Codable {
     
     init() {}
 
-    
-    
     init(name: String, obstacle: String, carColor: String) {
         self.name = name
         self.obstacle = obstacle
         self.carColor = carColor
-         
     }
-    
     
     public enum CodingKeys: String, CodingKey {
         case obstacle, name, carColor
     }
-    
-    
     
     
     required init(from decoder: Decoder) throws {
@@ -40,6 +34,4 @@ class Settings: Codable {
         try contrainer.encode(self.carColor, forKey: .carColor)
         try contrainer.encode(self.obstacle, forKey: .obstacle)
     }
-    
-    
     }

@@ -6,8 +6,6 @@ class YouDiedViewController: UIViewController {
     @IBOutlet weak var youDiedImage: UIImageView!
     @IBOutlet weak var menuButtonOutlet: UIButton!
     
-     
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         UIView.animate(withDuration: 2) {
